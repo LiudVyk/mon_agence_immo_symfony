@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+use DateTime;
 use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -87,6 +88,11 @@ class Property
      * @ORM\Column(type="datetime")
      */
     private $created_at;
+
+    public function __construct()
+    {
+        $this->created_at = new DateTime();
+    }
 
     public function getId(): ?int
     {
